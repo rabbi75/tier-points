@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tier Points And Levels</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        .custom_width{
+            width: 70%;
+            margin: auto;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .text-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .text-section h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .text-section p {
+            color: #6c757d;
+            font-size: 1rem;
+        }
+        .mockup-image {
+            width: 100%;
+            max-width: 300px;
+        }
+
+
+        /* two section */
+        .how_it_work {
+            margin-top: 100px;
+            text-align: center;
+        }
+        .points-section img {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+        .points-section .points {
+            font-weight: bold;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .sub-title {
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+        .description {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .arrow {
+            font-size: 2rem;
+            color: #6c757d;
+        }
+        .how_it_work_left_image{
+            width: 220px!important;
+        }
+        .how_it_work_right_image{
+            width: 260px!important;
+        }
+        /* two section end*/
+
+        /* three section start*/
+        .icon-circle {
+            background-color: #f8c4d0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        .three-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+        .three-description {
+            margin-top: 10px;
+        }
+        /* three section end*/
+
+        /* four section start*/
+        .four-main-container{
+            margin-top: 100px;
+        }
+        .four-icon-container {
+            background-color: #f8c4d0;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .four-vertical-divider {
+            border-left: 2px solid #f8c4d0;
+            height: 80px;
+            margin: auto;
+        }
+        .four-icon-container img {
+            width: 95px;
+        }
+        /* four section end*/
+
+        /* five section start*/
+        .five-container{
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        .five-content-container {
+            background-color: #f2f2f2; /* Light grey background similar to the image border */
+            padding: 50px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .five-btn-custom {
+            background-color: #f8c4d0;
+            color: black;
+            border: none;
+            font-weight: bold;
+        }
+        .five-btn-custom:hover {
+            background-color: #f3a5b3;
+        }
+        /* five section end*/
+
+
+        /* five tier journey start*/
+        .cup{
+            cursor: pointer;
+        }
+
+        /* .cup {
+            width: 80px;
+            height: 120px;
+            background-color: grey;
+            border-radius: 0 0 20px 20px;
+            position: relative;
+            margin: 0 10px;
+            opacity: 0.3;
+            transition: opacity 0.3s;
+        }
+        .cup:hover,
+        .cup.active {
+            opacity: 1;
+            cursor: pointer;
+        } */
+        /* .cup.grey { background-color: grey; }
+        .cup.purple { background-color: purple; }
+        .cup.yellow { background-color: yellow; }
+        .cup.pink { background-color: pink; }
+        .cup.green { background-color: blue; } */
+        /* .cup::after {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 20px;
+            background-color: black;
+            border-radius: 10px 10px 0 0;
+        } */
+        .cup {
+            margin: -50px 0px;
+        }
+        .tier-text {
+            text-align: center;
+            font-weight: bold;
+            color: black;
+            margin-top: 10px;
+            opacity: 0.3;
+        }
+        .tier-text.active {
+            opacity: 1;
+        }
+        .rewards-section {
+            display: none;
+            text-align: center;
+            margin-top: 0px;
+        }
+        .rewards-section.active {
+            display: block;
+        }
+        .hidden_color {
+            visibility: hidden;
+        }
+        .container_tier img{
+            width: 150px;
+        }
+
+        /* .container_tier.rewards-section{
+            margin-top: -20px;
+        } */
+
+        /* five tier journey end*/
+
+        /* .reward_list h4{
+            padding: 10px 0px;
+        }
+        .reward_list .one p{
+            text-align: right;
+        }
+        .reward_list .two img{
+            width: 50px;
+        }
+        .reward_list .three p{
+            text-align: left;
+        } */
+         .reward_title{
+            padding: 10px 0px;
+         }
+         .reward-row {
+            margin-top: 1rem;
+            padding: 0.1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+        }
+        .points {
+            font-size: 0.9rem;
+            color: gray;
+        }
+        .achievement-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .points-bonus {
+            color: #ff5a00;
+        }
+        .reward_img {
+            width: 50px!important;
+            height: 50px!important;
+            display: block;
+            margin: auto;
+        }
+        .opacity{
+            font-size: 12px;
+            color: #CCCCCC;
+        }
+        @media (max-width: 425px) {
+            .custom_width{
+                width: 100%!important;
+            }
+            .container_tier img {
+                width: 85px;
+            }
+        }
+
+
+    </style>
+    
+</head>
+<body>
+
+<div class="custom_width">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="row">
+                <!-- Text Section -->
+                <div class="col-md-6 text-section">
+                    <h2>TIER POINTS & LEVELS</h2>
+                    <p>Earn points with every order of Joe goodness! More points will unlock new tier levels and reveal unique offers, gifts, and rewards!</p>
+                </div>
+        
+                <!-- Mockup Image Section -->
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <img src="image/mobile screen.svg" alt="iPhone Mockup" class="mockup-image">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container how_it_work">
+        <!-- Title -->
+        <h2 class="section-title text-center">HOW IT WORKS</h2>
+        
+        <div class="row justify-content-center">
+            <div class="row points-section align-items-center justify-content-center">
+                <!-- Left Points Section -->
+                <div class="col-md-3">
+                    <img class="how_it_work_left_image" src="image/EARN POINTS.svg" alt="Earn Points">
+                    <div class="sub-title mt-3">EARN POINTS</div>
+                    <div class="description">Earn more points with every app order!<br>Check out the full points breakdown here</div>
+                </div>
+        
+                <div class="col-md-6">
+                    <div class="row">
+                        <!-- Arrow to Gifts Section -->
+                    <div class="col-md-2 text-center arrow">→</div>
+        
+                    <!-- Middle Gifts Section -->
+                    <div class="col-md-8 text-center">
+                        <img src="image/gift.svg" alt="Gifts" class="img-fluid">
+                        <div class="sub-title">Earn Points, Reveal Rewards!</div>
+                        <div class="description">Discover hidden offers and<br>exclusive deals as you level up!</div>
+                    </div>
+            
+                    <!-- Arrow to Tiers Section -->
+                    <div class="col-md-2 text-center arrow">→</div>
+                    </div>
+                </div>
+        
+                <!-- Right Tiers Section -->
+                <div class="col-md-3">
+                    <!-- <div class="d-flex flex-row-reverse align-items-center mb-2">
+                        <img src="image/1.svg" alt="Drink" class="me-2">
+                        <div class="points">SIGNUP =</div>
+                    </div>
+                    <div class="d-flex flex-row-reverse align-items-center mb-2">
+                        <img src="image/2.svg" alt="Drink" class="me-2">
+                        <div class="points">8.000 =</div>
+                    </div>
+                    <div class="d-flex flex-row-reverse align-items-center mb-2">
+                        <img src="image/3.svg" alt="Drink" class="me-2">
+                        <div class="points">16.000 =</div>
+                    </div>
+                    <div class="d-flex flex-row-reverse align-items-center mb-2">
+                        <img src="image/4.svg" alt="Drink" class="me-2">
+                        <div class="points">32.000 =</div>
+                    </div>
+                    <div class="d-flex flex-row-reverse align-items-center mb-2">
+                        <img src="image/5.svg" alt="Drink" class="me-2">
+                        <div class="points">48.000 =</div>
+                    </div> -->
+                    <!-- Repeat for other items -->
+                    <img src="image/points.svg" alt="Gifts" class="how_it_work_right_image">
+                    <div class="sub-title">Rise Through Tiers!</div>
+                    <div class="description">Five levels await—see points required above.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container three-container">
+        <div class="row justify-content-center">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="icon-circle me-3">
+                    <span>✨</span> <!-- Icon placeholder -->
+                </div>
+                <div class="text-center">
+                    <h3 class="fw-bold">WHAT ARE POINTS?</h3>
+                    <hr class="mx-auto" style="width: 50px; border-top: 2px solid #f8c4d0;">
+                    <p class="three-description">
+                        Earn points with every order and challenge.<br>
+                        Each one brings you closer to the next tier and exciting rewards!
+                    </p>
+                    <button class="btn btn-outline-dark mt-2">LEARN MORE &rarr;</button>
+                </div>
+                <div class="icon-circle ms-3">
+                    <span>✨</span> <!-- Icon placeholder -->
+                </div>
+            </div>
+            <p class="text-center mt-4">Tap to explore your 5-level reward journey!</p>
+        </div>
+    </div>
+    
+    <div class="container container_tier text-center">
+        <div class="row justify-content-center">
+                <div>
+                    <h2>Tap to explore your 5-level reward journeys!</h2>
+                </div>
+                <div class="container">
+                    <div class="d-flex justify-content-center">
+                        <div class="cup grey active" onclick="showRewards('grey')"><img src="image/1.svg" alt=""></div>
+                        <div class="cup purple" onclick="showRewards('purple')"><img src="image/3.svg" alt=""></div>
+                        <div class="cup yellow" onclick="showRewards('yellow')"><img src="image/2.svg" alt=""></div>
+                        <div class="cup pink" onclick="showRewards('pink')"><img src="image/4.svg" alt=""></div>
+                        <div class="cup green" onclick="showRewards('green')"><img src="image/5.svg" alt=""></div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-center mt-2 hidden_color">
+                        <div class="tier-text active" id="grey-text">GREY</div>
+                        <div class="tier-text" id="purple-text">PURPLE</div>
+                        <div class="tier-text" id="yellow-text">YELLOW</div>
+                        <div class="tier-text" id="pink-text">PINK</div>
+                        <div class="tier-text" id="green-text">GREEN</div>
+                    </div>
+                  
+                    <!-- Rewards sections -->
+                    <div id="grey-rewards" class="rewards-section active">
+                        <h5>GREY TIER REWARDS</h5>
+                        <p>60 points</p>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="image/gray1.png" alt="Joe Reusable Cup" class="img-fluid">
+                            <h5>REWARD on us!</h5>
+                            <p>Receive a complimentary product after your first app order.
+                                *Excluding counter products, shots & water</p>
+                          </div>
+                          <div class="col-md-6">
+                            <img src="image/gray2.png" alt="Fast-Track Pre-Ordering" class="img-fluid">
+                            <h5>PRE ORDER PERKS!</h5>
+                            <p>Ability to pre-order in all stores at all times.</p>
+                          </div>
+                        </div>
+
+                        <!-- <div class="row reward_list">
+                            <h4>Grey tier journey</h4>
+                            <div class="col-md-4 one">
+                                <p>16,000 Points</p>
+                            </div>
+                            <div class="col-md-4 two">
+                                <img src="image/down_gift.png" alt="img">
+                            </div>
+                            <div class="col-md-4 three">
+                                <p>A rewards from MP</p>
+                            </div>
+                        </div> -->
+                        
+                        <h6 class="reward_title">Grey tier journey</h6>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="points">32.000 Points</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down_gift.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div>A RAWARD FROM <b>BP</b></div>
+                              <!-- <div>First Preorder</div>
+                              <div class="points-bonus">+300 pts</div> -->
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">₹1000 order</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Pre order</div>
+                              <div>Book your favourite service</div>
+                              <div class="points-bonus">+1000 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Boocking video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Book announcement video</div>
+                              <div class="points-bonus">+700 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Rewards video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Income prof video</div>
+                              <div class="points-bonus">+550 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Review video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Quality service review video</div>
+                              <div class="points-bonus">+1250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Awerness video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down_gift.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Salfcare importance video</div>
+                              <div class="points-bonus">+1250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Engaging activity</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Easy 9</div>
+                              <div>3 Liks, 3 comments, 3 share for 30 days</div>
+                              <div class="points-bonus">+3250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="points">40.000 Points</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">A reward from <b>BP</b></div>
+                              <div>Before you know it, you're Blue Star!</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                                <div class="opacity">Unlocked after</div>
+                              <div class="points">₹1000 order</div>
+                            </div>
+                            <div class="col-4 text-center">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Pre Order</div>
+                              <div>Book your favriote services</div>
+                              <div class="points-bonus">+1000 pts</div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div id="purple-rewards" class="rewards-section">
+                        <h5>PINK REWARDS</h5>
+                        <p>10 Points</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                              <img src="image/purple1.svg" alt="Joe Reusable Cup" class="img-fluid">
+                              <h5>Treat REWARD</h5>
+                              <p>We love to treat you! Choose from delicious options like Banana bread, Carrot Cake or Muffins!</p>
+                            </div>
+                            <div class="col-md-6">
+                              <img src="image/purple2.svg" alt="Fast-Track Pre-Ordering" class="img-fluid">
+                              <h5>signature REward</h5>
+                              <p>Choose one of Joe’s famous Signature Juices. Get those greens in!</p>
+                            </div>
+                        </div>
+
+                        
+                        <h6 class="reward_title">Pink tier journey</h6>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="points">32.000 Points</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down_gift.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div>A RAWARD FROM <b>BP</b></div>
+                              <!-- <div>First Preorder</div>
+                              <div class="points-bonus">+300 pts</div> -->
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">₹1000 order</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Pre order</div>
+                              <div>Book your favourite service</div>
+                              <div class="points-bonus">+1000 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Boocking video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Book announcement video</div>
+                              <div class="points-bonus">+700 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Rewards video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Income prof video</div>
+                              <div class="points-bonus">+550 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Review video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Quality service review video</div>
+                              <div class="points-bonus">+1250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Awerness video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down_gift.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Salfcare importance video</div>
+                              <div class="points-bonus">+1250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Engaging activity</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Easy 9</div>
+                              <div>3 Liks, 3 comments, 3 share for 30 days</div>
+                              <div class="points-bonus">+3250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="points">40.000 Points</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">A reward from <b>BP</b></div>
+                              <div>Before you know it, you're Blue Star!</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                                <div class="opacity">Unlocked after</div>
+                              <div class="points">₹1000 order</div>
+                            </div>
+                            <div class="col-4 text-center">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Pre Order</div>
+                              <div>Book your favriote services</div>
+                              <div class="points-bonus">+1000 pts</div>
+                            </div>
+                        </div>
+
+                    </div>
+            
+                    <div id="yellow-rewards" class="rewards-section">
+                        <h5>YELLOW GOLD REWARDS</h5>
+                        <p>60 points</p>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="image/yel1.png" alt="Joe Reusable Cup" class="img-fluid">
+                            <h5>JOE REUSABLE CUP</h5>
+                            <p>Time to get serious with your very own Joe reusable cup! Save the planet and even more cash with a 10% discount when you bring it to collect your coffee order.</p>
+                          </div>
+                          <div class="col-md-6">
+                            <img src="image/yel2.svg" alt="Fast-Track Pre-Ordering" class="img-fluid">
+                            <h5>FAST-TRACK PRE-ORDERING</h5>
+                            <p>As a Joe VIP, you can skip the line! Your orders will automatically be made first.</p>
+                          </div>
+                        </div>
+
+                        <h6 class="reward_title">Yellow tier journey</h6>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="points">32.000 Points</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down_gift.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div>A RAWARD FROM <b>BP</b></div>
+                              <!-- <div>First Preorder</div>
+                              <div class="points-bonus">+300 pts</div> -->
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">₹1000 order</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Pre order</div>
+                              <div>Book your favourite service</div>
+                              <div class="points-bonus">+1000 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Boocking video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Book announcement video</div>
+                              <div class="points-bonus">+700 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Rewards video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Income prof video</div>
+                              <div class="points-bonus">+550 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Review video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Quality service review video</div>
+                              <div class="points-bonus">+1250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Awerness video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down_gift.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Salfcare importance video</div>
+                              <div class="points-bonus">+1250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Engaging activity</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Easy 9</div>
+                              <div>3 Liks, 3 comments, 3 share for 30 days</div>
+                              <div class="points-bonus">+3250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="points">40.000 Points</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">A reward from <b>BP</b></div>
+                              <div>Before you know it, you're Blue Star!</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                                <div class="opacity">Unlocked after</div>
+                              <div class="points">₹1000 order</div>
+                            </div>
+                            <div class="col-4 text-center">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Pre Order</div>
+                              <div>Book your favriote services</div>
+                              <div class="points-bonus">+1000 pts</div>
+                            </div>
+                        </div>
+
+                    </div>
+            
+                    <div id="pink-rewards" class="rewards-section">
+                        <h5>GREEN REWARDS</h5>
+                        <p>50 points.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                              <img src="image/purple1.svg" alt="Joe Reusable Cup" class="img-fluid">
+                              <h5>Treat REWARD</h5>
+                              <p>We love to treat you! Choose from delicious options like Banana bread, Carrot Cake or Muffins!</p>
+                            </div>
+                            <div class="col-md-6">
+                              <img src="image/purple2.svg" alt="Fast-Track Pre-Ordering" class="img-fluid">
+                              <h5>signature REward</h5>
+                              <p>Choose one of Joe’s famous Signature Juices. Get those greens in!</p>
+                            </div>
+                        </div>
+
+                        
+                        <h6 class="reward_title">Green tier journey</h6>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="points">32.000 Points</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down_gift.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div>A RAWARD FROM <b>BP</b></div>
+                              <!-- <div>First Preorder</div>
+                              <div class="points-bonus">+300 pts</div> -->
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">₹1000 order</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Pre order</div>
+                              <div>Book your favourite service</div>
+                              <div class="points-bonus">+1000 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Boocking video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Book announcement video</div>
+                              <div class="points-bonus">+700 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Rewards video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Income prof video</div>
+                              <div class="points-bonus">+550 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Review video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Quality service review video</div>
+                              <div class="points-bonus">+1250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Awerness video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down_gift.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Salfcare importance video</div>
+                              <div class="points-bonus">+1250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Engaging activity</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Easy 9</div>
+                              <div>3 Liks, 3 comments, 3 share for 30 days</div>
+                              <div class="points-bonus">+3250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="points">40.000 Points</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">A reward from <b>BP</b></div>
+                              <div>Before you know it, you're Blue Star!</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                                <div class="opacity">Unlocked after</div>
+                              <div class="points">₹1000 order</div>
+                            </div>
+                            <div class="col-4 text-center">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Pre Order</div>
+                              <div>Book your favriote services</div>
+                              <div class="points-bonus">+1000 pts</div>
+                            </div>
+                        </div>
+
+                    </div>
+            
+                    <div id="green-rewards" class="rewards-section">
+                        <h5>BLUE REWARDS</h5>
+                        <p>200 Points.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                              <img src="image/gray1.png" alt="Joe Reusable Cup" class="img-fluid">
+                              <h5>REWARD on us!</h5>
+                              <p>Receive a complimentary product after your first app order.
+                                  *Excluding counter products, shots & water</p>
+                            </div>
+                            <div class="col-md-6">
+                              <img src="image/gray2.png" alt="Fast-Track Pre-Ordering" class="img-fluid">
+                              <h5>PRE ORDER PERKS!</h5>
+                              <p>Ability to pre-order in all stores at all times.</p>
+                            </div>
+                        </div>
+
+                        
+                        <h6 class="reward_title">Blue tier journey</h6>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="points">32.000 Points</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down_gift.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div>A RAWARD FROM <b>BP</b></div>
+                              <!-- <div>First Preorder</div>
+                              <div class="points-bonus">+300 pts</div> -->
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">₹1000 order</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Pre order</div>
+                              <div>Book your favourite service</div>
+                              <div class="points-bonus">+1000 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Boocking video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Book announcement video</div>
+                              <div class="points-bonus">+700 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Rewards video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Income prof video</div>
+                              <div class="points-bonus">+550 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Review video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Quality service review video</div>
+                              <div class="points-bonus">+1250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Awerness video</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down_gift.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Share your</div>
+                              <div>Salfcare importance video</div>
+                              <div class="points-bonus">+1250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="opacity">Unlocked after</div>
+                              <div class="points">Engaging activity</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Easy 9</div>
+                              <div>3 Liks, 3 comments, 3 share for 30 days</div>
+                              <div class="points-bonus">+3250 pts</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                              <div class="points">40.000 Points</div>
+                            </div>
+                            <div class="col-4 text-center">
+                              <img src="image/down1.png" class="reward_img" alt="First Timer Icon">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">A reward from <b>BP</b></div>
+                              <div>Before you know it, you're Blue Star!</div>
+                            </div>
+                        </div>
+                        <div class="row reward-row align-items-center">
+                            <div class="col-4">
+                                <div class="opacity">Unlocked after</div>
+                              <div class="points">₹1000 order</div>
+                            </div>
+                            <div class="col-4 text-center">
+                            </div>
+                            <div class="col-4">
+                              <div class="achievement-title">Pre Order</div>
+                              <div>Book your favriote services</div>
+                              <div class="points-bonus">+1000 pts</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+    
+    <div class="container four-main-container">
+        <div class="row justify-content-center">
+            <div class="row text-center">
+                <!-- First column -->
+                <div class="col-md-5 d-flex flex-column align-items-center">
+                    <div class="four-icon-container">
+                        <img src="image/14.svg" alt="Icon 1"> <!-- Placeholder Icon 1 -->
+                    </div>
+                    <h5>ADVANCE QUICKLY THROUGH LOYALTY LEVELS!</h5>
+                    <button class="btn btn-outline-dark mt-2">LEARN ABOUT PRE-ORDER &rarr;</button>
+                </div>
+        
+                <!-- Divider -->
+                <div class="col-md-2 d-flex justify-content-center align-items-center">
+                    <div class="four-vertical-divider"></div>
+                </div>
+        
+                <!-- Second column -->
+                <div class="col-md-5 d-flex flex-column align-items-center">
+                    <div class="four-icon-container">
+                        <img src="image/15.svg" alt="Icon 2"> <!-- Placeholder Icon 2 -->
+                    </div>
+                    <h5>KEEP EARNING POINTS AT YOUR FAVOURITE SALON!</h5>
+                    <button class="btn btn-outline-dark mt-2">SHOW ME HOW &rarr;</button>
+                </div>
+            </div>
+        
+            <div class="row text-center mt-5">
+                <!-- Third column -->
+                <div class="col-md-5 d-flex flex-column align-items-center">
+                    <div class="four-icon-container">
+                        <img src="image/16.svg" alt="Icon 3"> <!-- Placeholder Icon 3 -->
+                    </div>
+                    <h5>POINTS RESET IF YOU PAUSE YOUR JOURNEY!</h5>
+                    <button class="btn btn-outline-dark mt-2">LEARN MORE &rarr;</button>
+                </div>
+        
+                <!-- Divider -->
+                <div class="col-md-2 d-flex justify-content-center align-items-center">
+                    <div class="four-vertical-divider"></div>
+                </div>
+        
+                <!-- Fourth column -->
+                <div class="col-md-5 d-flex flex-column align-items-center">
+                    <div class="four-icon-container">
+                        <img src="image/17.svg" alt="Icon 4"> <!-- Placeholder Icon 4 -->
+                    </div>
+                    <h5>EXPLORE EVERYTHING THE JOE APP OFFERS!</h5>
+                    <button class="btn btn-outline-dark mt-2">SHOW ME! &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container five-container d-flex justify-content-center align-items-center">
+        <div class="five-content-container">
+            <h5>DOWNLOAD NOW –<br>START EARNING REWARDS TODAY!</h5>
+            <button class="btn five-btn-custom mt-3">GET STARTED NOW</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showRewards(tier) {
+        // Remove active class from all cups and tier texts
+        document.querySelectorAll('.cup').forEach(cup => cup.classList.remove('active'));
+        document.querySelectorAll('.tier-text').forEach(text => text.classList.remove('active'));
+        document.querySelectorAll('.rewards-section').forEach(section => section.classList.remove('active'));
+
+        // Add active class to selected cup, text, and rewards section
+        document.querySelector(`.cup.${tier}`).classList.add('active');
+        document.getElementById(`${tier}-text`).classList.add('active');
+        document.getElementById(`${tier}-rewards`).classList.add('active');
+    }
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
